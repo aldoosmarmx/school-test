@@ -11,17 +11,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
-@Table(name = "student")
+@Table(name = "grade")
 @Getter
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Student implements Serializable {
+public class Room implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
@@ -33,17 +30,10 @@ public class Student implements Serializable {
   @Column(name = "uuid", nullable = false)
   private String uuid;
 
-  @Column(name = "name", nullable = false)
-  private String name;
-
-  @Column(name = "first_surname", nullable = false, columnDefinition = "TEXT")
-  private String firstSurname;
-
-  @Column(name = "second_surname", columnDefinition = "TEXT")
-  private String secondSurname;
+  @Column(name = "cal", nullable = false)
+  private int cal;
 
   @Temporal(TemporalType.DATE)
-  @Column(name = "birthday", nullable = false)
-  private Date birthday;
-
+  @Column(name = "fechaReg", nullable = false)
+  private Date fechaR;
 }
